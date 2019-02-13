@@ -1,0 +1,163 @@
+1.
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraMovement : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        move();
+        
+    }
+
+    void move()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+
+        float t = transform.eulerAngles.z;
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(0f,0f, 0.1f);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(0f, 0f, -0.1f);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(-0.1f, 0f, 0f);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(0.1f, 0f, 0f);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.Translate(0f, 0.1f, 0f);
+        }
+
+        float h = Input.GetAxis("Mouse X");
+        float v = Input.GetAxis("Mouse Y");
+
+        transform.Rotate(v * -1f, h, t*-1f);
+    }
+}
+
+
+2.
+
+mid-fi prototype
+
+
+
+Delivery Game
+------------------------------------------------------------------------------------------------
+''Delivery Game''
+
+Opening Scene - Inside look of a fast food restaurant, and a delivery bag:
+
+
+[[New Game]]
+[[Load Game]]
+[[Setting]]
+[[Quit]]
+
+
+
+New Game
+------------------------------------------------------------------------------------------------
+''New Game''
+Opening Scene: Game started. A delivery boy is standing in front of a fast-food restaurant.
+
+Cell Phone: You received a new delivery order with address and time limit.
+
+[[Game]]
+
+
+
+Load Game
+------------------------------------------------------------------------------------------------
+Load your previous game state
+
+[[Game]] 
+
+
+
+Setting
+------------------------------------------------------------------------------------------------
+set volume, graphic, language etc.
+
+[[Delivery Game]] 
+
+
+
+Quit
+------------------------------------------------------------------------------------------------
+Quit the Game
+
+
+
+
+
+Game
+------------------------------------------------------------------------------------------------
+''Game''
+
+After delivery an order, you will receive certain amount of payment and some tips depend on how long you took to deliver it. Faster the better.
+
+You can visit store anytime during the game. Store is somewhere near the fast-food restaurant.
+
+[[store]]
+
+You can visit City of Regina anytime during the game. To rent a building, pay for business registration and open your own fast-food store
+
+[[City of Regina]]
+
+or Quit the game
+
+[[Quit ->Delivery Game]] 
+
+
+
+
+
+Store
+------------------------------------------------------------------------------------------------
+In here you can buy many items that helps your delivery.
+
+rocket backpack
+flashlight shoes
+spider gloves
+bicycle
+motorcycle
+car
+F1 car
+Rover
+helicopter
+F22
+UFO
+starship
+
+You can go back to game [[Game]] 
+
+
+
+
+
+City of Regina
+------------------------------------------------------------------------------------------------
+Here you can rent building, register business and open your own fast-food restaurant.
+
+Back to game [[Game]] 
